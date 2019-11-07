@@ -359,18 +359,60 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/" >
+            
+                <span>CentOS7 升级SSH</span>
+        </a>
+        <div class="abstract-content">
+            升级前准备关闭SELinux1sudo setenforce 0 #临时关闭SELinux
+
+安装/升级，SSH相关的依赖1sudo yum install -y gcc openssl-devel pam-devel rpm-build
+
+下载SSH原文件到OpenSSH下载最新版本，后缀名为tar.gz的源文件。
+国内访问下载缓慢可以使用
+子原的分享-openssh-8.1p1.tar.gz来下载8.1版本的OpenSSH。
+下载方式可以使用scp或者ftp上传到服务器，也可以使用wget直接进行下载。
+使用wget方式：
+12sudo yum install -y wget #安装...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" >
             
                 <span>添加自定义host</span>
         </a>
         <div class="abstract-content">
-            ​    添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。
-Linux or Mac​    Linux的所有发行版本，其中的配置文件都是在/etc下面，Mac也是同样需要注意的是修改hosts文件需要root权限来进行。
+            ​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。
+Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下面，Mac也是同样需要注意的是修改hosts文件需要root权限来进行。
 1cat /etc/hosts
 
-​    可以先看下hosts文件的内容
+可以先看下hosts文件的内容
 
-​    简单来说，就是把要指定的ip写在一行左边然后，在右边写上自...
+简单来说，就是把要指定的ip写在一行左边然后，在右边写上自定义的域名名称，hosts文件的优先级...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -498,9 +540,16 @@ Linux or Mac​    Linux的所有发行版本，其中的配置文件都是在/e
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 1
+        Total : 2
         </div>
         <!-- search  -->
         
@@ -516,6 +565,11 @@ Linux or Mac​    Linux的所有发行版本，其中的配置文件都是在/e
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span><a class="archive-post-title" href= "/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/" >CentOS7 升级SSH</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/06</span><a class="archive-post-title" href= "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" >添加自定义host</a>
         </li>
     
@@ -523,6 +577,12 @@ Linux or Mac​    Linux的所有发行版本，其中的配置文件都是在/e
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     

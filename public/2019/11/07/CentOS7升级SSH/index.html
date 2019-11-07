@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>CentOS7 升级SSH · 无败亦无胜</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >正则技术分享</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">CentOS7 升级SSH</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>正则技术分享</a>
 </header>
@@ -220,24 +231,73 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            CentOS7 升级SSH
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">392</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/11/07</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,91 +398,66 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/" >
-            
-                <span>CentOS7 升级SSH</span>
-        </a>
-        <div class="abstract-content">
-            升级前准备关闭SELinux1sudo setenforce 0 #临时关闭SELinux
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="升级前准备"><a href="#升级前准备" class="headerlink" title="升级前准备"></a>升级前准备</h1><h3 id="关闭SELinux"><a href="#关闭SELinux" class="headerlink" title="关闭SELinux"></a>关闭<code>SELinux</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo setenforce 0 #临时关闭SELinux</span><br></pre></td></tr></table></figure>
 
-安装/升级，SSH相关的依赖1sudo yum install -y gcc openssl-devel pam-devel rpm-build
+<h3 id="安装-升级，SSH相关的依赖"><a href="#安装-升级，SSH相关的依赖" class="headerlink" title="安装/升级，SSH相关的依赖"></a>安装/升级，SSH相关的依赖</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y gcc openssl-devel pam-devel rpm-build</span><br></pre></td></tr></table></figure>
 
-下载SSH原文件到OpenSSH下载最新版本，后缀名为tar.gz的源文件。
-国内访问下载缓慢可以使用
-子原的分享-openssh-8.1p1.tar.gz来下载8.1版本的OpenSSH。
-下载方式可以使用scp或者ftp上传到服务器，也可以使用wget直接进行下载。
-使用wget方式：
-12sudo yum install -y wget #安装...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
-    
-</div>
-            
-        </div>
+<h3 id="下载SSH原文件"><a href="#下载SSH原文件" class="headerlink" title="下载SSH原文件"></a>下载SSH原文件</h3><p>到<a href="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/" target="_blank" rel="noopener">OpenSSH</a>下载最新版本，后缀名为<code>tar.gz</code>的源文件。</p>
+<p>国内访问下载缓慢可以使用</p>
+<p><a href="http://res.zyarcher.com/openssh-8.1p1.tar.gz" target="_blank" rel="noopener">子原的分享-openssh-8.1p1.tar.gz</a>来下载<code>8.1</code>版本的<code>OpenSSH</code>。</p>
+<p>下载方式可以使用<code>scp</code>或者<code>ftp</code>上传到服务器，也可以使用<code>wget</code>直接进行下载。</p>
+<p>使用<code>wget</code>方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y wget #安装wget，若已存在则会提示已安装</span><br><span class="line">sudo wget '下载链接，如 http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.1p1.tar.gz' #使用wget进行下载</span><br></pre></td></tr></table></figure>
+
+<p>然后使用 <code>tar xf 文件名</code>进行解压缩。</p>
+<h3 id="卸载原SSH"><a href="#卸载原SSH" class="headerlink" title="卸载原SSH"></a>卸载原SSH</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -qa |grep  openssh #查看当前ssh</span><br><span class="line">sudo for i in $(rpm -qa |grep openssh);do rpm -e $i --nodeps;done #删除现有ssh</span><br><span class="line">sudo rm -rf /etc/ssh #移除当前ssh配置</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装-升级-SSH"><a href="#安装-升级-SSH" class="headerlink" title="安装/升级 SSH"></a>安装/升级 SSH</h1><p>使用<code>cd</code>进入解压后的目录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo ./configure --prefix=/usr --sysconfdir=/etc/ssh --with-md5-passwords--with-pam --with-tcp-wrappers  --with-ssl-dir=/usr/local/ssl --without-hardening #脚本配置命令</span><br><span class="line">sudo make &amp;&amp; make install #编译安装</span><br><span class="line">sudo cp contrib/redhat/sshd.init /etc/init.d/sshd #拷贝系统初始sshd</span><br><span class="line">sudo chkconfig --add sshd #新增sshd服务</span><br><span class="line">sudo chkconfig sshd on #开启sshd服务</span><br><span class="line">sudo chkconfig --list|grep sshd #查看sshd服务是否已经开启</span><br><span class="line">sudo sed -i "32a PermitRootLogin yes" /etc/ssh/sshd_config #允许root账号登录</span><br><span class="line">sudo systemctl restart sshd #重启sshd服务</span><br><span class="line">systemctl status sshd #查看是否启动成功</span><br><span class="line">ssh -V #查看当前ssh版本</span><br></pre></td></tr></table></figure>
+
+<p><code>sshd服务</code>即我们通常使用的<code>SSH</code>。<strong>完成以上步骤，即已完成ssh的升级。</strong></p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" >
-            
-                <span>添加自定义host</span>
-        </a>
-        <div class="abstract-content">
-            ​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。
-Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下面，Mac也是同样需要注意的是修改hosts文件需要root权限来进行。
-1cat /etc/hosts
-
-可以先看下hosts文件的内容
-
-简单来说，就是把要指定的ip写在一行左边然后，在右边写上自定义的域名名称，hosts文件的优先级...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blessarcher.com">JFkh</a>
+            <p>原文链接：<a href="https://blessarcher.com/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/">https://blessarcher.com/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/</a>
+            <p>发表日期：<a href="https://blessarcher.com/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/">November 7th 2019, 12:37:46 pm</a>
+            <p>更新日期：<a href="https://blessarcher.com/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/">November 7th 2019, 1:01:33 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "notar">notar</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "DNS">DNS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "系统配置">系统配置</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" title= "添加自定义host">
+                    <div class="prevTitle">添加自定义host</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -460,6 +495,24 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#升级前准备"><span class="toc-number">1.</span> <span class="toc-text">升级前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭SELinux"><span class="toc-number">1.0.1.</span> <span class="toc-text">关闭SELinux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-升级，SSH相关的依赖"><span class="toc-number">1.0.2.</span> <span class="toc-text">安装/升级，SSH相关的依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载SSH原文件"><span class="toc-number">1.0.3.</span> <span class="toc-text">下载SSH原文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载原SSH"><span class="toc-number">1.0.4.</span> <span class="toc-text">卸载原SSH</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装-升级-SSH"><span class="toc-number">2.</span> <span class="toc-text">安装/升级 SSH</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -595,6 +648,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
