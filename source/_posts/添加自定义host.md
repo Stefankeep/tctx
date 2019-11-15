@@ -15,7 +15,7 @@ cat /etc/hosts
 
 可以先看下`hosts`文件的内容
 
-![deepin中hosts文件](http://q0j84xr3u.bkt.clouddn.com/201911061323.png)
+![deepin中hosts文件](http://file.zyarcher.com/201911061323.png)
 
 简单来说，就是把要指定的`ip`写在一行左边然后，在右边写上自定义的域名名称，`hosts文件的优先级会默认高于dns解析结果或dns缓存`。
 
