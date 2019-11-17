@@ -346,27 +346,71 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >
+        <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
             
-                <span>升级CentOS内核版本</span>
+                <span>docker中Mysql的备份以及恢复</span>
         </a>
         <div class="abstract-content">
-            查看当前的内核123uanme -r #查看当前内核版本uname -a #查看完整内核信息cat /etc/redhat-release #查看CentOS发行版版本
-
-升级内核ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，ELRepo是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其...
+            使用docker ps查看mysql的容器名称
+比如MySQL的容器名称为mysql
+备份数据的脚本则为
+123456789#!/usr/bin/env bashdocker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利sed -i '1iSET NAMES utf8mb4;' doc.sqls...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/17</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "MySql">MySql</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/17/dockerAndDokcer-composeInstall/" >
+            
+                <span>docker以及docker-compose的安装</span>
+        </a>
+        <div class="abstract-content">
+            docker安装docker的安装最好是按照官网的推荐来进行。
+docker官网
+简要记录下再CentOS下如何执行安装。
+
+清除现有docker软件
+添加docker的yum源，添加docker源的密钥
+进行安装
+清理docker的yum源(参考文章)
+使用国内阿里云镜像加速器
+
+清除现有docker软件12345678sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \     ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "运维">运维</a>
     
 </div>
             

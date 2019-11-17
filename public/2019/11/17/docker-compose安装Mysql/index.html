@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>添加自定义host · 无败亦无胜</title>
+    <title>docker-compose安装Mysql以及redis · 无败亦无胜</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >子原文档</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">添加自定义host</a>
+                <a href="#" class="post-name">docker-compose安装Mysql以及redis</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            添加自定义host
+            docker-compose安装Mysql以及redis
             <!-- 404 -->
             
         </h1>
@@ -266,22 +266,20 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "notar">notar</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "DNS">DNS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "系统配置">系统配置</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Mysql">Mysql</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">328</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">427</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/11/06</span>
+                    <span class="post-intro-time">2019/11/17</span>
                     
                     <span class="shareWrapper">
                         <span class="iconfont-archer shareIcon">&#xe71d;</span>
@@ -400,28 +398,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。</p>
-<h1 id="Linux-or-Mac"><a href="#Linux-or-Mac" class="headerlink" title="Linux or Mac"></a>Linux or Mac</h1><p><code>Linux</code>的所有发行版本，其中的配置文件都是在<code>/etc</code>下面，<code>Mac</code>也是同样需要注意的是修改<code>hosts</code>文件需要<code>root</code>权限来进行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/hosts</span><br></pre></td></tr></table></figure>
+        <p>docker-compose.yml文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span> <span class="comment">#版本号 不能为1,其余随便</span></span><br><span class="line"><span class="attr">services:</span> <span class="comment"># 要启动的service列表,可以启动多个</span></span><br><span class="line">  <span class="attr">mysql:</span> <span class="comment"># service名称</span></span><br><span class="line">    <span class="attr">environment:</span> <span class="comment">#启动mysql镜像使用的镜像配置环境</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">zyarcher</span> <span class="comment">#启动的mysql中root的密码</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span> <span class="comment">#重启策略,一直重启</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span> <span class="comment">#容器名称</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:5.7</span> <span class="comment">#使用mysql的镜像版本,5.7就是Mysql5.7最新的版本</span></span><br><span class="line">    <span class="attr">command:</span> <span class="comment">#执行的命令lower-case_table_names是1,即大小写忽略,max_allowed_packet即最大传输包</span></span><br><span class="line">        <span class="string">--lower-case_table_names=1</span></span><br><span class="line">        <span class="string">--max_allowed_packet=128M</span>        </span><br><span class="line">    <span class="attr">volumes:</span> <span class="comment">#将msyql镜像中的文件都外置出来</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">$PWD/mysql/conf:/etc/mysql</span> <span class="comment">#mysql的配置文件,自动生成目录有添加my.cnf即可进行配置</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">$PWD/mysql/data:/var/lib/mysql</span> <span class="comment">#mysql的数据文件,加入这个之后重启也不会丢失已有的文件</span></span><br><span class="line">    <span class="attr">ports:</span> <span class="comment">#开放端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3306</span><span class="string">:3306</span> <span class="comment">#本地端口:镜像的端口</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">redis</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">6379</span><span class="string">:6379</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">redis</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">redis-server</span> <span class="string">--requirepass</span> <span class="string">zyarcher</span> <span class="comment">#开启远程连接,并指定远程密码为zyarcher</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">$PWD/redis/data:/data</span></span><br></pre></td></tr></table></figure>
 
-<p>可以先看下<code>hosts</code>文件的内容</p>
-<p><img src="http://file.zyarcher.com/201911061323.png" alt="deepin中hosts文件"></p>
-<p>简单来说，就是把要指定的<code>ip</code>写在一行左边然后，在右边写上自定义的域名名称，<code>hosts文件的优先级会默认高于dns解析结果或dns缓存</code>。</p>
-<p>修改的方式就是</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo "IP地址 域名" &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
+<p>在写入<code>docker-compose.yml</code>文件的目录下运行<code>docker-compose up -d</code>即可启动.</p>
+<p>停止为<code>docker-compose down</code></p>
+<p>推荐的<code>my.cnf</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">host=localhost</span><br><span class="line">user=root</span><br><span class="line">password=zyarcher #配置中root的密码,写入这个主要是为了能够在本地快速操作数据库</span><br><span class="line">[mysqld]</span><br><span class="line">auto_increment_increment=1</span><br><span class="line">auto_increment_offset=1</span><br><span class="line">back_log=210</span><br><span class="line">binlog_checksum=CRC32</span><br><span class="line">binlog_format=ROW</span><br><span class="line">binlog_row_image=MINIMAL</span><br><span class="line">block_encryption_mode=aes-128-ecb</span><br><span class="line">character_set_server=utf8mb4</span><br><span class="line">concurrent_insert=AUTO</span><br><span class="line">connect_timeout=10</span><br><span class="line">default_week_format=0</span><br><span class="line">delay_key_write=ON</span><br><span class="line">delayed_insert_limit=100</span><br><span class="line">delayed_insert_timeout=300</span><br><span class="line">delayed_queue_size=1000</span><br><span class="line">div_precision_increment=4</span><br><span class="line">eq_range_index_dive_limit=200</span><br><span class="line">event_scheduler=OFF</span><br><span class="line">explicit_defaults_for_timestamp=OFF</span><br><span class="line">ft_min_word_len=4</span><br><span class="line">ft_query_expansion_limit=20</span><br><span class="line">group_concat_max_len=1024</span><br><span class="line">init_connect=</span><br><span class="line">innodb_adaptive_hash_index=ON</span><br><span class="line">innodb_autoinc_lock_mode=1</span><br><span class="line">innodb_concurrency_tickets=5000</span><br><span class="line">innodb_ft_enable_stopword=ON</span><br><span class="line">innodb_ft_max_token_size=84</span><br><span class="line">innodb_ft_min_token_size=3</span><br><span class="line">innodb_ft_server_stopword_table=</span><br><span class="line">innodb_ft_user_stopword_table=</span><br><span class="line">innodb_large_prefix=ON</span><br><span class="line">innodb_lock_wait_timeout=7200</span><br><span class="line">innodb_max_dirty_pages_pct=75.000000</span><br><span class="line">innodb_old_blocks_pct=37</span><br><span class="line">innodb_old_blocks_time=1000</span><br><span class="line">innodb_online_alter_log_max_size=134217728</span><br><span class="line">innodb_open_files=1024</span><br><span class="line">innodb_print_all_deadlocks=ON</span><br><span class="line">innodb_purge_batch_size=300</span><br><span class="line">innodb_purge_threads=4</span><br><span class="line">innodb_read_ahead_threshold=56</span><br><span class="line">innodb_read_io_threads=12</span><br><span class="line">innodb_rollback_on_timeout=OFF</span><br><span class="line">innodb_stats_method=nulls_equal</span><br><span class="line">innodb_stats_on_metadata=OFF</span><br><span class="line">innodb_stats_sample_pages=8</span><br><span class="line">innodb_stats_transient_sample_pages=8</span><br><span class="line">innodb_strict_mode=ON</span><br><span class="line">innodb_table_locks=ON</span><br><span class="line">innodb_thread_concurrency=0</span><br><span class="line">innodb_thread_sleep_delay=10000</span><br><span class="line">innodb_write_io_threads=12</span><br><span class="line">interactive_timeout=3600</span><br><span class="line">key_cache_age_threshold=300</span><br><span class="line">key_cache_block_size=1024</span><br><span class="line">key_cache_division_limit=100</span><br><span class="line">lock_wait_timeout=31536000</span><br><span class="line">log_queries_not_using_indexes=OFF</span><br><span class="line">log_timestamps=SYSTEM</span><br><span class="line">long_query_time=10.000000</span><br><span class="line">low_priority_updates=OFF</span><br><span class="line">lower_case_table_names=1</span><br><span class="line">max_allowed_packet=128M        </span><br><span class="line">max_connect_errors=999999999</span><br><span class="line">max_connections=800</span><br><span class="line">max_length_for_sort_data=1024</span><br><span class="line">max_prepared_stmt_count=16382</span><br><span class="line">max_user_connections=0</span><br><span class="line">myisam_sort_buffer_size=8388608</span><br><span class="line">net_read_timeout=30</span><br><span class="line">net_retry_count=10</span><br><span class="line">net_write_timeout=60</span><br><span class="line">ngram_token_size=2</span><br><span class="line">open_files_limit=102400</span><br><span class="line">performance_schema=OFF</span><br><span class="line">query_alloc_block_size=8192</span><br><span class="line">query_cache_limit=1048576</span><br><span class="line">query_cache_size=0</span><br><span class="line">query_cache_type=OFF</span><br><span class="line">query_cache_wlock_invalidate=OFF</span><br><span class="line">query_prealloc_size=8192</span><br><span class="line">slow_launch_time=2</span><br><span class="line">sql_auto_is_null=OFF</span><br><span class="line">sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br><span class="line">sql_safe_updates=OFF</span><br><span class="line">table_definition_cache=768</span><br><span class="line">table_open_cache=512</span><br><span class="line">table_open_cache_instances=8</span><br><span class="line">thread_cache_size=512</span><br><span class="line">time_zone=SYSTEM</span><br><span class="line">tmp_table_size=209715200</span><br><span class="line">tx_isolation=REPEATABLE-READ</span><br><span class="line">wait_timeout=3600</span><br></pre></td></tr></table></figure>
 
-<p>​    就能够添加自定义域名了。</p>
-<p>​    在项目开发中，建议将一些敏感地址都使用这样的方式进行访问。</p>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p><code>Windows</code>的<code>hosts</code>文件位置是<code>c:\windows\system32\drivers\etc</code>，修改方式跟Linux和Mac一样都是在文件中加入一行自定义的域名描述就行了。</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blessarcher.com">JFkh</a>
-            <p>原文链接：<a href="https://blessarcher.com/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/">https://blessarcher.com/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/</a>
-            <p>发表日期：<a href="https://blessarcher.com/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/">November 6th 2019, 1:12:55 pm</a>
-            <p>更新日期：<a href="https://blessarcher.com/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/">November 17th 2019, 11:11:35 am</a>
+            <p>原文链接：<a href="https://blessarcher.com/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/">https://blessarcher.com/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/</a>
+            <p>发表日期：<a href="https://blessarcher.com/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/">November 17th 2019, 11:45:43 am</a>
+            <p>更新日期：<a href="https://blessarcher.com/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/">November 17th 2019, 12:10:37 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -430,12 +423,17 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/11/07/CentOS7%E5%8D%87%E7%BA%A7SSH/" title= "CentOS7 升级SSH">
-                    <div class="nextTitle">CentOS7 升级SSH</div>
+                <a href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" title= "docker中Mysql的备份以及恢复">
+                    <div class="nextTitle">docker中Mysql的备份以及恢复</div>
                 </a>
             
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/11/17/dockerAndDokcer-composeInstall/" title= "docker以及docker-compose的安装">
+                    <div class="prevTitle">docker以及docker-compose的安装</div>
+                </a>
             
         </li>
     </ul>
@@ -506,7 +504,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-or-Mac"><span class="toc-number">1.</span> <span class="toc-text">Linux or Mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows"><span class="toc-number">2.</span> <span class="toc-text">Windows</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

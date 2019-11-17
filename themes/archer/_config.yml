@@ -5,7 +5,7 @@ social:
   github: https://github.com/Stefankeep
   wechat: /assets/wechat.png
 friends:
-  林三的江湖: //bild.blessarcher.com
+  常用资源文件: http//res.blessarcher.com
 about:
   enable: false
   image: '/intro/about-bg.jpg'
@@ -15,7 +15,7 @@ SEO_keywords:
   - Notar
   - '多余寡欢'
   - Springboot
-main_title: 正则技术分享
+main_title: 子原文档
 subtitle: Have withstood pain to create many weapons.
 site_header_image: '/assets/bg/vacant-blue-armchairs-3163715.jpg'
 post_header_image: '/intro/post-bg.jpg'

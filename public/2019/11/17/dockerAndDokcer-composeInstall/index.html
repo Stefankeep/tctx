@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>docker以及docker-compose的安装 · 无败亦无胜</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >子原文档</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">docker以及docker-compose的安装</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>子原文档</a>
 </header>
@@ -220,24 +231,73 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            docker以及docker-compose的安装
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "运维">运维</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">695</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/11/17</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,43 +398,91 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >
-            
-                <span>升级CentOS内核版本</span>
-        </a>
-        <div class="abstract-content">
-            查看当前的内核123uanme -r #查看当前内核版本uname -a #查看完整内核信息cat /etc/redhat-release #查看CentOS发行版版本
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h1><p><code>docker</code>的安装最好是按照官网的推荐来进行。</p>
+<p><a href="https://docs.docker.com/" target="_blank" rel="noopener">docker官网</a></p>
+<p>简要记录下再<code>CentOS</code>下如何执行安装。</p>
+<ul>
+<li>清除现有docker软件</li>
+<li>添加docker的yum源，添加docker源的密钥</li>
+<li>进行安装</li>
+<li>清理docker的yum源(<a href="[https://zyarcher.com/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/](https://zyarcher.com/2019/11/09/清除CentOS的多余elrepo/)">参考文章</a>)</li>
+<li>使用国内阿里云镜像加速器</li>
+</ul>
+<h3 id="清除现有docker软件"><a href="#清除现有docker软件" class="headerlink" title="清除现有docker软件"></a>清除现有docker软件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
 
-升级内核ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，ELRepo是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
+<h3 id="安装所需依赖，添加源以及密钥"><a href="#安装所需依赖，添加源以及密钥" class="headerlink" title="安装所需依赖，添加源以及密钥"></a>安装所需依赖，添加源以及密钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils \</span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h3 id="进行安装"><a href="#进行安装" class="headerlink" title="进行安装"></a>进行安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line">sudo systemctl start docker #启动docker服务</span><br><span class="line">sudo docker run hello-world #测试是否可用</span><br><span class="line">sudo systemctl enable docker #开机自动启动</span><br></pre></td></tr></table></figure>
+
+<p>在这一步，一般服务器都没有问题，个人主机的话容易遇到安装之后<code>docker使用权限的问题</code>。<strong>如果安装和使用的都是root账号,不需要进行下面的操作</strong></p>
+<p>解决方式官网也给出了指导。</p>
+<p><a href="https://docs.docker.com/install/linux/linux-postinstall/" target="_blank" rel="noopener">官网解决docker权限</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker #添加一个用户群组</span><br><span class="line">sudo usermod -aG docker $USER #将当前用户加入到docker群组里面</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后需要重新注销再登录一下用户,如果还是不能进行使用,请运行下面两行代码进行赋权</span></span><br><span class="line">sudo chown "$USER":"$USER" /home/"$USER"/.docker -R </span><br><span class="line">sudo chmod g+rwx "$HOME/.docker" -R</span><br></pre></td></tr></table></figure>
+
+<h1 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h1><p><code>docker-compose</code>官网是直接给出的可执行文件,所以安装很简单,唯一的麻烦可能就只是国内下载基本上太难了.</p>
+<p>网络比较好的直接进入<a href="https://docs.docker.com/compose/install/#install-compose" target="_blank" rel="noopener">官网</a>,按照指导进行下载使用.</p>
+<p>执行完之后不能直接进行使用的,是因为没有软连接或者加入可执行权限(软连接即快捷方式)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose #添加docker-compose可执行权限</span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose #添加docker-compose软连接</span><br></pre></td></tr></table></figure>
+
+
+
+<p>还可以通过国内我自己的资源进行下载</p>
+<p><a href="http://res.zyarcher.com/docker-compose-1.24.1-Liunx-x86_64" target="_blank" rel="noopener">docker-compose-1.24.1-Liunx-x86_64</a></p>
+<p><strong>需要注意</strong></p>
+<p>通过我自己的资源进行下载的需要进行重命名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://res.zyarcher.com/docker-compose-1.24.1-Liunx-x86_64 #下载docker-compsoe1.24.1把呢不能</span><br><span class="line">mv docker-compose-1.24.1-Liunx-x86_64 /usr/local/bin/docker-compose #将docker-compose重命名以及移动到一般可执行文件的目录下</span><br><span class="line">sudo chmod +x /usr/local/bin/docker-compose #赋可执行权</span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose #添加软连接</span><br></pre></td></tr></table></figure>
+
+<p>以上就已经安装完成</p>
+<p>执行<code>docker-compose --version</code>进行验证</p>
+<h1 id="docker国内加速器"><a href="#docker国内加速器" class="headerlink" title="docker国内加速器"></a>docker国内加速器</h1><p>目前推荐使用aliyun进行,注册账号之后,按照阿里云的配置进行操作,有详细说明很简单.</p>
+<p>在完成注册后打开<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">容器镜像服务</a>就好了.</p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blessarcher.com">JFkh</a>
+            <p>原文链接：<a href="https://blessarcher.com/2019/11/17/dockerAndDokcer-composeInstall/">https://blessarcher.com/2019/11/17/dockerAndDokcer-composeInstall/</a>
+            <p>发表日期：<a href="https://blessarcher.com/2019/11/17/dockerAndDokcer-composeInstall/">November 17th 2019, 11:17:15 am</a>
+            <p>更新日期：<a href="https://blessarcher.com/2019/11/17/dockerAndDokcer-composeInstall/">November 17th 2019, 11:51:12 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" title= "docker-compose安装Mysql以及redis">
+                    <div class="nextTitle">docker-compose安装Mysql以及redis</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" title= "升级CentOS内核版本">
+                    <div class="prevTitle">升级CentOS内核版本</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -412,6 +520,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker安装"><span class="toc-number">1.</span> <span class="toc-text">docker安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#清除现有docker软件"><span class="toc-number">1.0.1.</span> <span class="toc-text">清除现有docker软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装所需依赖，添加源以及密钥"><span class="toc-number">1.0.2.</span> <span class="toc-text">安装所需依赖，添加源以及密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进行安装"><span class="toc-number">1.0.3.</span> <span class="toc-text">进行安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-compose安装"><span class="toc-number">2.</span> <span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker国内加速器"><span class="toc-number">3.</span> <span class="toc-text">docker国内加速器</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -635,6 +761,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
