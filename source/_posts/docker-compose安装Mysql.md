@@ -130,16 +130,15 @@ query_cache_type=OFF
 query_cache_wlock_invalidate=OFF
 query_prealloc_size=8192
 slow_launch_time=2
-sql_auto_is_null=OFF
+#sql_auto_is_null=OFF
 sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
-sql_safe_updates=OFF
+#sql_safe_updates=OFF
 table_definition_cache=768
 table_open_cache=512
 table_open_cache_instances=8
 thread_cache_size=512
-time_zone=SYSTEM
+#time_zone=SYSTEM
 tmp_table_size=209715200
-tx_isolation=REPEATABLE-READ
 wait_timeout=3600
 ```
 

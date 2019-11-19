@@ -346,15 +346,13 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
+        <a class="abstract-title" href = "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >
             
-                <span>docker中Mysql的备份以及恢复</span>
+                <span>docker-compose安装Mysql以及redis</span>
         </a>
         <div class="abstract-content">
-            使用docker ps查看mysql的容器名称
-比如MySQL的容器名称为mysql
-备份数据的脚本则为
-123456789#!/usr/bin/env bashdocker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利sed -i '1iSET NAMES utf8mb4;' doc.sqls...
+            docker-compose.yml文件
+1234567891011121314151617181920212223242526version: '3' #版本号 不能为1,其余随便services: # 要启动的service列表,可以启动多个  mysql: # service名称    environment: #启动mysql镜像使用的镜像配置环境      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码    restart: always #重启策略,一直重启    container_name: mysql #容器名称    ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -365,9 +363,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "MySql">MySql</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Mysql">Mysql</a>
     
 </div>
             
@@ -487,10 +485,6 @@
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 7
@@ -524,12 +518,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
         </li>
     
     
@@ -547,12 +541,6 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
-    
-        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
-    
         <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
@@ -563,7 +551,13 @@
     
         <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
+    
+        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     
@@ -571,7 +565,7 @@
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
     
-        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

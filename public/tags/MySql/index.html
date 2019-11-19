@@ -346,28 +346,28 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >
+        <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
             
-                <span>清除CentOS的多余elrepo以及优化yum下载</span>
+                <span>docker中Mysql的备份以及恢复</span>
         </a>
         <div class="abstract-content">
-            优化下载yum-axelget 是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间，安装该插件的同时会安装另一个软件 axel。axel 是一个并行下载工具，在下载 http、ftp 等简单协议的文件时非常好用： 
-1sudo yum install yum-axelget
-
-删除多余elrepo123456789ls /etc/yum.repos.d/ #列出当前系统源sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔ls /etc/pki/rpm-gpg/ #列出...
+            使用docker ps查看mysql的容器名称
+比如MySQL的容器名称为mysql
+备份数据的脚本则为
+123456789#!/usr/bin/env bashdocker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利sed -i '1iSET NAMES utf8mb4;' doc.sqls...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/17</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "yum">yum</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "MySql">MySql</a>
     
 </div>
             
