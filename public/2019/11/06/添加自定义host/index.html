@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-</head>
+<meta name="generator" content="Hexo 4.1.0"></head>
 
     
         <body class="post-body">
@@ -266,11 +266,11 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "notar">notar</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "notar">notar</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "DNS">DNS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DNS">DNS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "系统配置">系统配置</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "系统配置">系统配置</a>
     
 </div>
                 
@@ -402,13 +402,13 @@ height:50vh;
     <article class="article-entry">
         <p>​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。</p>
 <h1 id="Linux-or-Mac"><a href="#Linux-or-Mac" class="headerlink" title="Linux or Mac"></a>Linux or Mac</h1><p><code>Linux</code>的所有发行版本，其中的配置文件都是在<code>/etc</code>下面，<code>Mac</code>也是同样需要注意的是修改<code>hosts</code>文件需要<code>root</code>权限来进行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cat /etc/hosts</span></pre></td></tr></table></figure>
 
 <p>可以先看下<code>hosts</code>文件的内容</p>
 <p><img src="http://file.zyarcher.com/201911061323.png" alt="deepin中hosts文件"></p>
 <p>简单来说，就是把要指定的<code>ip</code>写在一行左边然后，在右边写上自定义的域名名称，<code>hosts文件的优先级会默认高于dns解析结果或dns缓存</code>。</p>
 <p>修改的方式就是</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo "IP地址 域名" &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo echo "IP地址 域名" &gt;&gt; /etc/hosts</span></pre></td></tr></table></figure>
 
 <p>​    就能够添加自定义域名了。</p>
 <p>​    在项目开发中，建议将一些敏感地址都使用这样的方式进行访问。</p>
@@ -582,9 +582,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -600,12 +617,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/springbootYml/" >spring boot多环境自定义配置文件中的信息</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
         </li>
     
     
@@ -615,12 +632,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
         </li>
     
     
@@ -638,23 +660,27 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
-    
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
-    
-        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
+        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     
@@ -662,7 +688,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -198,7 +198,7 @@
     
     <!-- 谷歌统计  -->
     
-</head>
+<meta name="generator" content="Hexo 4.1.0"></head>
 
     
         <body class="home-body">
@@ -359,6 +359,41 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/10/springbootYml/" >
+            
+                <span>spring boot多环境自定义配置文件中的信息</span>
+        </a>
+        <div class="abstract-content">
+            spring boot配置文件说明SpringBoot的默认配置文件为application.properties,通常我们在使用的时候会通过修改后缀名的方式来将其变为application.yml.两者在本质上面没有任何的区别,区别只在于书写配置文件的格式.
+更加推荐使用yml的方式,结构更加的清晰,对列表配置的表达也更易于理解.
+在实际开发中同一个项目会需要运行在多个环境中,比如开发环境\测试环境\预发布环境\正式环境等诸多自定义环境中.
+SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
+1application.yml #主配置文件2applicatio...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
             
                 <span>docker中Mysql的备份以及恢复</span>
@@ -367,7 +402,7 @@ height:50vh;
             使用docker ps查看mysql的容器名称
 比如MySQL的容器名称为mysql
 备份数据的脚本则为
-123456789#!/usr/bin/env bashdocker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利sed -i '1iSET NAMES utf8mb4;' doc.sqls...
+1#!/usr/bin/env bash23docker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件4sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利5sed -i '1iSET NAMES utf8mb4;' doc.sql6sed ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -378,9 +413,9 @@ height:50vh;
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "MySql">MySql</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MySql">MySql</a>
     
 </div>
             
@@ -399,7 +434,7 @@ height:50vh;
         </a>
         <div class="abstract-content">
             docker-compose.yml文件
-1234567891011121314151617181920212223242526version: '3' #版本号 不能为1,其余随便services: # 要启动的service列表,可以启动多个  mysql: # service名称    environment: #启动mysql镜像使用的镜像配置环境      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码    restart: always #重启策略,一直重启    container_name: mysql #容器名称    ...
+1version: '3' #版本号 不能为1,其余随便2services: # 要启动的service列表,可以启动多个3  mysql: # service名称4    environment: #启动mysql镜像使用的镜像配置环境5      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码6    restart: always #重启策略,一直重启7    container_name: mysql #容器名称8    image: mysql:5.7 #使用mysql的镜像版本,5.7就...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -410,9 +445,9 @@ height:50vh;
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Mysql">Mysql</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Mysql">Mysql</a>
     
 </div>
             
@@ -440,7 +475,7 @@ docker官网
 清理docker的yum源(参考文章)
 使用国内阿里云镜像加速器
 
-清除现有docker软件12345678sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \     ...
+清除现有docker软件1sudo yum remove docker \2                  docker-client \3                  docker-client-latest \4                  docker-common \5        ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -451,11 +486,11 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "运维">运维</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "运维">运维</a>
     
 </div>
             
@@ -473,7 +508,7 @@ docker官网
                 <span>升级CentOS内核版本</span>
         </a>
         <div class="abstract-content">
-            查看当前的内核123uanme -r #查看当前内核版本uname -a #查看完整内核信息cat /etc/redhat-release #查看CentOS发行版版本
+            查看当前的内核1uanme -r #查看当前内核版本2uname -a #查看完整内核信息3cat /etc/redhat-release #查看CentOS发行版版本
 
 升级内核ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，ELRepo是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其...
         </div>
@@ -486,9 +521,9 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
     
 </div>
             
@@ -509,7 +544,7 @@ docker官网
             优化下载yum-axelget 是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间，安装该插件的同时会安装另一个软件 axel。axel 是一个并行下载工具，在下载 http、ftp 等简单协议的文件时非常好用： 
 1sudo yum install yum-axelget
 
-删除多余elrepo123456789ls /etc/yum.repos.d/ #列出当前系统源sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔ls /etc/pki/rpm-gpg/ #列出...
+删除多余elrepo1ls /etc/yum.repos.d/ #列出当前系统源2sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔3ls /etc/pki/rpm-gpg/ #列出多个源的KE...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -520,9 +555,9 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "yum">yum</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "yum">yum</a>
     
 </div>
             
@@ -549,7 +584,7 @@ docker官网
 子原的分享-openssh-8.1p1.tar.gz来下载8.1版本的OpenSSH。
 下载方式可以使用scp或者ftp上传到服务器，也可以使用wget直接进行下载。
 使用wget方式：
-12sudo yum install -y wget #安装...
+1sudo yum install -y wget #安装w...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -560,11 +595,11 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux维护">Linux维护</a>
     
 </div>
             
@@ -599,11 +634,11 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "notar">notar</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "notar">notar</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "DNS">DNS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DNS">DNS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "系统配置">系统配置</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "系统配置">系统配置</a>
     
 </div>
             
@@ -768,9 +803,26 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -786,12 +838,12 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/springbootYml/" >spring boot多环境自定义配置文件中的信息</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
         </li>
     
     
@@ -801,12 +853,17 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
         </li>
     
     
@@ -824,23 +881,27 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
-    
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
-    
-        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
+        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     
@@ -848,7 +909,7 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

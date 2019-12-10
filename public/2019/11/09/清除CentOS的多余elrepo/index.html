@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-</head>
+<meta name="generator" content="Hexo 4.1.0"></head>
 
     
         <body class="post-body">
@@ -266,9 +266,9 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "yum">yum</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "yum">yum</a>
     
 </div>
                 
@@ -399,9 +399,9 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="优化下载"><a href="#优化下载" class="headerlink" title="优化下载"></a>优化下载</h1><p><code>yum-axelget</code> 是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间，安装该插件的同时会安装另一个软件 axel。axel 是一个并行下载工具，在下载 http、ftp 等简单协议的文件时非常好用： </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install yum-axelget</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo yum install yum-axelget</span></pre></td></tr></table></figure>
 
-<h1 id="删除多余elrepo"><a href="#删除多余elrepo" class="headerlink" title="删除多余elrepo"></a>删除多余elrepo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ls /etc/yum.repos.d/ #列出当前系统源</span><br><span class="line">sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔</span><br><span class="line">ls /etc/pki/rpm-gpg/ #列出多个源的KEY</span><br><span class="line">sudo rm 上边删除的源将KEY也删除掉(eg:RPM-GPG-KEY-EPEL) #比如说要删除的是eple.repo源，则他的KEY名称为RPM-GPG-KEY-EPEL</span><br><span class="line">rpm -qa | grep 系统源的名称(eg:epel) #列出源的rpm文件</span><br><span class="line">sudo yum remove 列出的rmp文件(eg:epel-release-6-8.noarch) #删除源的rpm文件</span><br><span class="line">sudo yum clean all #清除yum缓存</span><br><span class="line">sudo yum repolist #列出现在的yum源</span><br><span class="line">sudo yum makecahe #创建新的索引和yum缓存</span><br></pre></td></tr></table></figure>
+<h1 id="删除多余elrepo"><a href="#删除多余elrepo" class="headerlink" title="删除多余elrepo"></a>删除多余elrepo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ls /etc/yum.repos.d/ #列出当前系统源</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ls /etc/pki/rpm-gpg/ #列出多个源的KEY</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">sudo rm 上边删除的源将KEY也删除掉(eg:RPM-GPG-KEY-EPEL) #比如说要删除的是eple.repo源，则他的KEY名称为RPM-GPG-KEY-EPEL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">rpm -qa | grep 系统源的名称(eg:epel) #列出源的rpm文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">sudo yum remove 列出的rmp文件(eg:epel-release-6-8.noarch) #删除源的rpm文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">sudo yum clean all #清除yum缓存</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">sudo yum repolist #列出现在的yum源</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">sudo yum makecahe #创建新的索引和yum缓存</span></pre></td></tr></table></figure>
 
 
     </article>
@@ -577,9 +577,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -595,12 +612,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/springbootYml/" >spring boot多环境自定义配置文件中的信息</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
         </li>
     
     
@@ -610,12 +627,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
         </li>
     
     
@@ -633,23 +655,27 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
-    
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
-    
-        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
+        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     
@@ -657,7 +683,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-</head>
+<meta name="generator" content="Hexo 4.1.0"></head>
 
     
         <body class="post-body">
@@ -266,9 +266,9 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
     
 </div>
                 
@@ -398,13 +398,13 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="查看当前的内核"><a href="#查看当前的内核" class="headerlink" title="查看当前的内核"></a>查看当前的内核</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uanme -r #查看当前内核版本</span><br><span class="line">uname -a #查看完整内核信息</span><br><span class="line">cat /etc/redhat-release #查看CentOS发行版版本</span><br></pre></td></tr></table></figure>
+        <h1 id="查看当前的内核"><a href="#查看当前的内核" class="headerlink" title="查看当前的内核"></a>查看当前的内核</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">uanme -r #查看当前内核版本</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">uname -a #查看完整内核信息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release #查看CentOS发行版版本</span></pre></td></tr></table></figure>
 
 <h1 id="升级内核"><a href="#升级内核" class="headerlink" title="升级内核"></a>升级内核</h1><p><code>ELRepo</code> 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，<code>ELRepo</code>是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其中部分内容未经官方进行测试升级，对于一些软件有新版本需求时，仍不失为一种最佳解决方案。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org #导入ELRepo仓库的公共密钥</span><br><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm #安装ELRepo仓库的yum源，会自动安装最新的符合版本的仓库</span><br><span class="line">sudo yum clean all #清楚当前yum的各种缓存和索引</span><br><span class="line">sudo yum makecache #建立新的yum的缓存和索引</span><br><span class="line">sudo yum update -y #更新系统中的软件包</span><br><span class="line">sudo yum --disablerepo="*" --enablerepo="elrepo-kernel" list available #列出最新的内核版本 --disablerepo指不使用哪些仓库 </span><br><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml #安装最新的版本 --enablerepo指使用那个yum仓库</span><br><span class="line">sudo awk -F\' '$1=="menuentry " &#123;print i++ " : " $2&#125;' /etc/grub2.cfg #查看当前安装之后系统中的内核</span><br><span class="line">sudo grub2-set-default 0 #使用最新安装的内核作为系统开机默认的grub，即开机使用哪个内核进行系统启动</span><br><span class="line">sudo grub2-mkconfig -o /boot/grub2/grub.cfg #修改完成之后需要重新生成grub的配置文件</span><br><span class="line">reboot #重启以启用新的内核</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org #导入ELRepo仓库的公共密钥</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm #安装ELRepo仓库的yum源，会自动安装最新的符合版本的仓库</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">sudo yum clean all #清楚当前yum的各种缓存和索引</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">sudo yum makecache #建立新的yum的缓存和索引</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">sudo yum update -y #更新系统中的软件包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">sudo yum --disablerepo="*" --enablerepo="elrepo-kernel" list available #列出最新的内核版本 --disablerepo指不使用哪些仓库 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml #安装最新的版本 --enablerepo指使用那个yum仓库</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">sudo awk -F\' '$1=="menuentry " &#123;print i++ " : " $2&#125;' /etc/grub2.cfg #查看当前安装之后系统中的内核</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">sudo grub2-set-default 0 #使用最新安装的内核作为系统开机默认的grub，即开机使用哪个内核进行系统启动</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">sudo grub2-mkconfig -o /boot/grub2/grub.cfg #修改完成之后需要重新生成grub的配置文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">reboot #重启以启用新的内核</span></pre></td></tr></table></figure>
 
 <h1 id="删除旧的内核"><a href="#删除旧的内核" class="headerlink" title="删除旧的内核"></a>删除旧的内核</h1><p>删除旧的内核推荐使用<code>yum-utils</code>工具进行，默认一般是安装的，可以安装一下以确认。<code>yum-utils</code>工具会保留最新的三个内核版本，超过三个会自动删除旧版本的内核。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils #安装yum-utils</span><br><span class="line">sudo package-cleanup --oldkernels #清楚旧的内核</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils #安装yum-utils</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">sudo package-cleanup --oldkernels #清楚旧的内核</span></pre></td></tr></table></figure>
 
 
     </article>
@@ -580,9 +580,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 7
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -598,12 +615,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/springbootYml/" >spring boot多环境自定义配置文件中的信息</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
         </li>
     
     
@@ -613,12 +630,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >升级CentOS内核版本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2019/11/09/%E6%B8%85%E9%99%A4CentOS%E7%9A%84%E5%A4%9A%E4%BD%99elrepo/" >清除CentOS的多余elrepo以及优化yum下载</a>
         </li>
     
     
@@ -636,23 +658,27 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
-    
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
-    
-        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
-    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
+        <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="notar"><span class="iconfont-archer">&#xe606;</span>notar</span>
     
@@ -660,7 +686,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+        <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
