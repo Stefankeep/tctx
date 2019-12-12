@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>拒绝者</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.1.0"></head>
+</head>
 
     
     
@@ -346,15 +346,13 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
+        <a class="abstract-title" href = "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >
             
-                <span>docker中Mysql的备份以及恢复</span>
+                <span>docker-compose安装Mysql以及redis</span>
         </a>
         <div class="abstract-content">
-            使用docker ps查看mysql的容器名称
-比如MySQL的容器名称为mysql
-备份数据的脚本则为
-1#!/usr/bin/env bash23docker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件4sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利5sed -i '1iSET NAMES utf8mb4;' doc.sql6sed ...
+            docker-compose.yml文件
+1234567891011121314151617181920212223242526version: '3' #版本号 不能为1,其余随便services: # 要启动的service列表,可以启动多个  mysql: # service名称    environment: #启动mysql镜像使用的镜像配置环境      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码    restart: always #重启策略,一直重启    container_name: mysql #容器名称    ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -365,9 +363,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySql">MySql</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Mysql">Mysql</a>
     
 </div>
             
@@ -515,9 +513,20 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -530,6 +539,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >Spring Boot异常处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -581,15 +595,15 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
-    
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
@@ -673,6 +687,12 @@ jsonContent:
     <!-- CNZZ  -->
     
     </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
     <!-- async load share.js -->
      
     </body>

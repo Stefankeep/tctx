@@ -1,4 +1,4 @@
-title: 正则技术分享
+title: 拒绝者
 subtitle: ''
 description: ''
 keywords:
@@ -6,7 +6,7 @@ author: JFkh
 language: zh-Hans
 timezone: 'Asia/Shanghai'
 
-url: https://blessarcher.com
+url: https://zyarcher.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

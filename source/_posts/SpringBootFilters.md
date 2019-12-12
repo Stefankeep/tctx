@@ -66,6 +66,16 @@ public class CustomFilter implements HandlerInterceptor {
 ```java
 @Configuration
 public class WebAppConfig implements WebMvcConfigurer {
+    
+    /**
+     * 跨域配置 
+     *
+     * @param registry 跨域注册
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST", "PUT", "OPTIONS", "DELETE");
+    }
 
     /**
      * 请求上下文拦截器
@@ -76,6 +86,17 @@ public class WebAppConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new CustomFilter()).addPathPatterns("/**")
                 .excludePathPatterns("/error/**");
+    }
+    
+    /**
+     * 配置静态文件 classpath是使用jvm的文件IO，根目录为resources。file是系统文件IO，相对路径是项目路径或者打包之后jar的相对路径
+     *
+     * @param resourceHandlerRegistry 静态触发器注册
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
+        resourceHandlerRegistry.addResourceHandler("/app/**").addResourceLocations("classpath:app/");
+        resourceHandlerRegistry.addResourceHandler("/source/**").addResourceLocations("file:app/source/");
     }
 
 }
