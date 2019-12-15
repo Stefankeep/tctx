@@ -346,6 +346,42 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >
+            
+                <span>CentOS源码安装python</span>
+        </a>
+        <div class="abstract-content">
+            一般来说直接源码编译就好了，在一些特定的环境下，比如最小化的CentOS版本中缺少编译以及所需要的依赖会不能进行编译。通过下面进行安装所需要的包。
+1yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel
+
+然后再Python官网下载所需要的Python版本源码。
+比如下载Python3.8然后进行编译安装。
+12345wget 'https://www.python.org/ftp/python...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >
             
                 <span>Spring Boot异常处理</span>
@@ -538,9 +574,9 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
-    
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
     
         <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "运维">运维</a>
     
@@ -658,46 +694,11 @@ docker官网
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" >
-            
-                <span>添加自定义host</span>
-        </a>
-        <div class="abstract-content">
-            ​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。
-Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下面，Mac也是同样需要注意的是修改hosts文件需要root权限来进行。
-1cat /etc/hosts
-
-可以先看下hosts文件的内容
-
-简单来说，就是把要指定的ip写在一行左边然后，在右边写上自定义的域名名称，hosts文件的优先级...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "notar">notar</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "DNS">DNS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "系统配置">系统配置</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">NEXT &amp;#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -849,9 +850,22 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -864,6 +878,11 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >CentOS源码安装python</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -882,12 +901,12 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker-compose%E5%AE%89%E8%A3%85Mysql/" >docker-compose安装Mysql以及redis</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
@@ -930,13 +949,15 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
-    
         <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
     
-        <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
     
