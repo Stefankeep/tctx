@@ -24,7 +24,7 @@ sudo yum install -y gcc openssl-devel pam-devel rpm-build
 
 国内访问下载缓慢可以使用
 
-[子原的分享-openssh-8.1p1.tar.gz](http://res.zyarcher.com/openssh-8.1p1.tar.gz)来下载`8.1`版本的`OpenSSH`。
+[子原的分享-openssh.tar.gz](http://res.zyarcher.com/openssh.tar.gz)来下载`最新`版本的`OpenSSH`。
 
 下载方式可以使用`scp`或者`ftp`上传到服务器，也可以使用`wget`直接进行下载。
 
@@ -63,3 +63,43 @@ ssh -V #查看当前ssh版本
 ```
 
 `sshd服务`即我们通常使用的`SSH`。**完成以上步骤，即已完成ssh的升级。**
+
+# 脚本集成
+
+```shell script
+#!/usr/bin bash
+
+setenforce 0
+
+yum install -y gcc openssl-devel pam-devel rpm-build
+
+
+wget 'http://res.zyarcher.com/openssh.tar.gz'
+
+mkdir cUHjCbB8W9dBuriKLI && tar xf openssh.tar.gz -C cUHjCbB8W9dBuriKLI --strip-components 1
+
+cd cUHjCbB8W9dBuriKLI || exit
+
+for i in $(rpm -qa |grep openssh);do rpm -e $i --nodeps;done
+
+rm -rf /etc/ssh
+
+./configure --prefix=/usr --sysconfdir=/etc/ssh --with-md5-passwords--with-pam --with-tcp-wrappers  --with-ssl-dir=/usr/local/ssl --without-hardening
+
+make && make install
+
+cp contrib/redhat/sshd.init /etc/init.d/sshd
+
+chkconfig --add sshd
+
+chkconfig sshd on
+
+sed -i "32a PermitRootLogin yes" /etc/ssh/sshd_config
+
+systemctl restart sshd
+
+ssh -V
+```
+
+也可以网络获取最新脚本 [http://res.zyarcher.com/update-openssh.sh](http://res.zyarcher.com/update-openssh.sh)
+
