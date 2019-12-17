@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>拒绝者</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.1.0"></head>
+</head>
 
     
     
@@ -346,12 +346,48 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >
+            
+                <span>CentOS源码安装python</span>
+        </a>
+        <div class="abstract-content">
+            一般来说直接源码编译就好了，在一些特定的环境下，比如最小化的CentOS版本中缺少编译以及所需要的依赖会不能进行编译。通过下面进行安装所需要的包。
+1yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel
+
+然后再Python官网下载所需要的Python版本源码。
+比如下载Python3.8然后进行编译安装。
+12345wget 'https://www.python.org/ftp/python...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/11/09/%E5%8D%87%E7%BA%A7CentOS%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC/" >
             
                 <span>升级CentOS内核版本</span>
         </a>
         <div class="abstract-content">
-            查看当前的内核1uanme -r #查看当前内核版本2uname -a #查看完整内核信息3cat /etc/redhat-release #查看CentOS发行版版本
+            查看当前的内核123uanme -r #查看当前内核版本uname -a #查看完整内核信息cat /etc/redhat-release #查看CentOS发行版版本
 
 升级内核ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，ELRepo是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其...
         </div>
@@ -364,9 +400,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
     
 </div>
             
@@ -387,7 +423,7 @@
             优化下载yum-axelget 是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间，安装该插件的同时会安装另一个软件 axel。axel 是一个并行下载工具，在下载 http、ftp 等简单协议的文件时非常好用： 
 1sudo yum install yum-axelget
 
-删除多余elrepo1ls /etc/yum.repos.d/ #列出当前系统源2sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔3ls /etc/pki/rpm-gpg/ #列出多个源的KE...
+删除多余elrepo123456789ls /etc/yum.repos.d/ #列出当前系统源sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔ls /etc/pki/rpm-gpg/ #列出...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -398,9 +434,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "yum">yum</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "yum">yum</a>
     
 </div>
             
@@ -424,10 +460,10 @@
 
 下载SSH原文件到OpenSSH下载最新版本，后缀名为tar.gz的源文件。
 国内访问下载缓慢可以使用
-子原的分享-openssh.tar.gz来下载最新版本的OpenSSH。
+子原的分享-openssh-8.1p1.tar.gz来下载8.1版本的OpenSSH。
 下载方式可以使用scp或者ftp上传到服务器，也可以使用wget直接进行下载。
 使用wget方式：
-1sudo yum install -y wget #安装wget，若已存...
+12sudo yum install -y wget #安装...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -438,11 +474,11 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux维护">Linux维护</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
     
 </div>
             
@@ -588,9 +624,35 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -603,6 +665,16 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >CentOS源码安装python</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >Spring Boot异常处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -621,12 +693,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
         </li>
     
     
@@ -654,21 +726,25 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
     
@@ -679,8 +755,6 @@
         <span class="sidebar-tag-name" data-tags="DNS"><span class="iconfont-archer">&#xe606;</span>DNS</span>
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     

@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>拒绝者</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.1.0"></head>
+</head>
 
     
     
@@ -346,13 +346,82 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >
+            
+                <span>CentOS源码安装python</span>
+        </a>
+        <div class="abstract-content">
+            一般来说直接源码编译就好了，在一些特定的环境下，比如最小化的CentOS版本中缺少编译以及所需要的依赖会不能进行编译。通过下面进行安装所需要的包。
+1yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel
+
+然后再Python官网下载所需要的Python版本源码。
+比如下载Python3.8然后进行编译安装。
+12345wget 'https://www.python.org/ftp/python...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >
+            
+                <span>Spring Boot异常处理</span>
+        </a>
+        <div class="abstract-content">
+            异常处理分为两个部分，第一个部分是异常触发器的配置，第二个部分是触发结果的处理。
+Spring Boot触发器配置通过继承默认的ErrorController来重写系统对于异常的处理
+123456789101112131415161718192021222324252627282930@Controllerpublic class ErrorCustomConfig implements ErrorController &#123;    private static final String ERROR_PATH = "/error";    @RequestMapping(value...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/10/SpringBootFilters/" >
             
                 <span>Spring Boot拦截器</span>
         </a>
         <div class="abstract-content">
             Spring Boot的拦截器Spring Boot的拦截器实际上是对HttpServlet的生命周期进行拦截
-1@Component2@Slf4j3public class CustomFilter implements HandlerInterceptor &#123;4    /**5     * 请求开始前6     *7     * @param httpServletRequest  request servlet请求8     * @param httpServletResponse response serlet返回9     * @param o            ...
+1234567891011121314151617181920212223242526272829303132333435363738394041424344@Component@Slf4jpublic class CustomFilter implements HandlerInterceptor &#123;    /**     * 请求开始前     *     * @param httpServletRequest  request servlet请求     * @...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -363,9 +432,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
     
 </div>
             
@@ -387,7 +456,7 @@
 更加推荐使用yml的方式,结构更加的清晰,对列表配置的表达也更易于理解.
 在实际开发中同一个项目会需要运行在多个环境中,比如开发环境\测试环境\预发布环境\正式环境等诸多自定义环境中.
 SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
-1application.yml #主配置文件2applicatio...
+12345application.yml #主配置文件applica...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -398,9 +467,9 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
     
 </div>
             
@@ -546,9 +615,35 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -561,6 +656,16 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >CentOS源码安装python</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >Spring Boot异常处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -579,12 +684,12 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
         </li>
     
     
@@ -612,21 +717,25 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
     
@@ -637,8 +746,6 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
         <span class="sidebar-tag-name" data-tags="DNS"><span class="iconfont-archer">&#xe606;</span>DNS</span>
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     

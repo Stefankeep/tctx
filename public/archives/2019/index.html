@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>无败亦无胜</title>
+    <title>拒绝者</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -200,7 +200,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.1.0"></head>
+</head>
 
     
     
@@ -346,13 +346,82 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >
+            
+                <span>CentOS源码安装python</span>
+        </a>
+        <div class="abstract-content">
+            一般来说直接源码编译就好了，在一些特定的环境下，比如最小化的CentOS版本中缺少编译以及所需要的依赖会不能进行编译。通过下面进行安装所需要的包。
+1yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel
+
+然后再Python官网下载所需要的Python版本源码。
+比如下载Python3.8然后进行编译安装。
+12345wget 'https://www.python.org/ftp/python...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >
+            
+                <span>Spring Boot异常处理</span>
+        </a>
+        <div class="abstract-content">
+            异常处理分为两个部分，第一个部分是异常触发器的配置，第二个部分是触发结果的处理。
+Spring Boot触发器配置通过继承默认的ErrorController来重写系统对于异常的处理
+123456789101112131415161718192021222324252627282930@Controllerpublic class ErrorCustomConfig implements ErrorController &#123;    private static final String ERROR_PATH = "/error";    @RequestMapping(value...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/12/10/SpringBootFilters/" >
             
                 <span>Spring Boot拦截器</span>
         </a>
         <div class="abstract-content">
             Spring Boot的拦截器Spring Boot的拦截器实际上是对HttpServlet的生命周期进行拦截
-1@Component2@Slf4j3public class CustomFilter implements HandlerInterceptor &#123;4    /**5     * 请求开始前6     *7     * @param httpServletRequest  request servlet请求8     * @param httpServletResponse response serlet返回9     * @param o            ...
+1234567891011121314151617181920212223242526272829303132333435363738394041424344@Component@Slf4jpublic class CustomFilter implements HandlerInterceptor &#123;    /**     * 请求开始前     *     * @param httpServletRequest  request servlet请求     * @...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -363,9 +432,9 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
     
 </div>
             
@@ -387,7 +456,7 @@
 更加推荐使用yml的方式,结构更加的清晰,对列表配置的表达也更易于理解.
 在实际开发中同一个项目会需要运行在多个环境中,比如开发环境\测试环境\预发布环境\正式环境等诸多自定义环境中.
 SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
-1application.yml #主配置文件2applicatio...
+12345application.yml #主配置文件applica...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -398,9 +467,9 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Spring Boot">Spring Boot</a>
     
 </div>
             
@@ -421,7 +490,7 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
             使用docker ps查看mysql的容器名称
 比如MySQL的容器名称为mysql
 备份数据的脚本则为
-1#!/usr/bin/env bash23docker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件4sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利5sed -i '1iSET NAMES utf8mb4;' doc.sql6sed ...
+123456789#!/usr/bin/env bashdocker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利sed -i '1iSET NAMES utf8mb4;' doc.sqls...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -432,9 +501,9 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySql">MySql</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "MySql">MySql</a>
     
 </div>
             
@@ -453,7 +522,7 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
         </a>
         <div class="abstract-content">
             docker-compose.yml文件
-1version: '3' #版本号 不能为1,其余随便2services: # 要启动的service列表,可以启动多个3  mysql: # service名称4    environment: #启动mysql镜像使用的镜像配置环境5      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码6    restart: always #重启策略,一直重启7    container_name: mysql #容器名称8    image: mysql:5.7 #使用mysql的镜像版本,5.7就...
+1234567891011121314151617181920212223242526version: '3' #版本号 不能为1,其余随便services: # 要启动的service列表,可以启动多个  mysql: # service名称    environment: #启动mysql镜像使用的镜像配置环境      MYSQL_ROOT_PASSWORD: zyarcher #启动的mysql中root的密码    restart: always #重启策略,一直重启    container_name: mysql #容器名称    ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -464,9 +533,9 @@ SpringBoot提供了简便的方式,通过激活不同的profile就可以了.
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker-compose">docker-compose</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Mysql">Mysql</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Mysql">Mysql</a>
     
 </div>
             
@@ -494,7 +563,7 @@ docker官网
 清理docker的yum源(参考文章)
 使用国内阿里云镜像加速器
 
-清除现有docker软件1sudo yum remove docker \2                  docker-client \3                  docker-client-latest \4                  docker-common \5        ...
+清除现有docker软件12345678sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \     ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -505,11 +574,11 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker-compose">docker-compose</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker-compose">docker-compose</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "运维">运维</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "运维">运维</a>
     
 </div>
             
@@ -527,7 +596,7 @@ docker官网
                 <span>升级CentOS内核版本</span>
         </a>
         <div class="abstract-content">
-            查看当前的内核1uanme -r #查看当前内核版本2uname -a #查看完整内核信息3cat /etc/redhat-release #查看CentOS发行版版本
+            查看当前的内核123uanme -r #查看当前内核版本uname -a #查看完整内核信息cat /etc/redhat-release #查看CentOS发行版版本
 
 升级内核ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。  ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。同时，ELRepo是升级内核的必要Yum仓库，提供最新的各种软件包，但非官方源，其...
         </div>
@@ -540,9 +609,9 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux">Linux</a>
     
 </div>
             
@@ -563,7 +632,7 @@ docker官网
             优化下载yum-axelget 是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间，安装该插件的同时会安装另一个软件 axel。axel 是一个并行下载工具，在下载 http、ftp 等简单协议的文件时非常好用： 
 1sudo yum install yum-axelget
 
-删除多余elrepo1ls /etc/yum.repos.d/ #列出当前系统源2sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔3ls /etc/pki/rpm-gpg/ #列出多个源的KE...
+删除多余elrepo123456789ls /etc/yum.repos.d/ #列出当前系统源sudo rm 上边列出的不需要的源文件(eg:epel.repo) #多个使用空格分隔ls /etc/pki/rpm-gpg/ #列出...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -574,9 +643,9 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "yum">yum</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "yum">yum</a>
     
 </div>
             
@@ -600,10 +669,10 @@ docker官网
 
 下载SSH原文件到OpenSSH下载最新版本，后缀名为tar.gz的源文件。
 国内访问下载缓慢可以使用
-子原的分享-openssh.tar.gz来下载最新版本的OpenSSH。
+子原的分享-openssh-8.1p1.tar.gz来下载8.1版本的OpenSSH。
 下载方式可以使用scp或者ftp上传到服务器，也可以使用wget直接进行下载。
 使用wget方式：
-1sudo yum install -y wget #安装wget，若已存...
+12sudo yum install -y wget #安装...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -614,50 +683,11 @@ docker官网
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "ssh">ssh</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CentOS">CentOS</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "CentOS">CentOS</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux维护">Linux维护</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/06/%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89host/" >
-            
-                <span>添加自定义host</span>
-        </a>
-        <div class="abstract-content">
-            ​添加自定义的host，可以让本地电脑通过域名访问我们指定的服务器地址。在一些时候是非常有用的，比如自定义到github访问最好的服务器上面，可以有效的提高访问效率。再比如，我们开发的项目需要与其他团队进行协作，又需要通过新增本地域名来保护我们的数据库地址等不便公开的信息。
-Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下面，Mac也是同样需要注意的是修改hosts文件需要root权限来进行。
-1cat /etc/hosts
-
-可以先看下hosts文件的内容
-
-简单来说，就是把要指定的ip写在一行左边然后，在右边写上自定义的域名名称，hosts文件的优先级...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "notar">notar</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "DNS">DNS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "系统配置">系统配置</a>
+        <a class="post-tag" href="javascript:void(0);" target="_blank" rel="noopener" data-tags = "Linux维护">Linux维护</a>
     
 </div>
             
@@ -665,6 +695,10 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">NEXT &amp;#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -803,9 +837,35 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -818,6 +878,16 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2019/12/15/centos%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85python/" >CentOS源码安装python</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2019/12/12/springboot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" >Spring Boot异常处理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -836,12 +906,12 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/dockerAndDokcer-composeInstall/" >docker以及docker-compose的安装</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >docker中Mysql的备份以及恢复</a>
         </li>
     
     
@@ -869,21 +939,25 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
         <span class="sidebar-tag-name" data-tags="Linux维护"><span class="iconfont-archer">&#xe606;</span>Linux维护</span>
     
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="docker-compose"><span class="iconfont-archer">&#xe606;</span>docker-compose</span>
     
         <span class="sidebar-tag-name" data-tags="Mysql"><span class="iconfont-archer">&#xe606;</span>Mysql</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="MySql"><span class="iconfont-archer">&#xe606;</span>MySql</span>
     
@@ -894,8 +968,6 @@ Linux or MacLinux的所有发行版本，其中的配置文件都是在/etc下�
         <span class="sidebar-tag-name" data-tags="DNS"><span class="iconfont-archer">&#xe606;</span>DNS</span>
     
         <span class="sidebar-tag-name" data-tags="系统配置"><span class="iconfont-archer">&#xe606;</span>系统配置</span>
-    
-        <span class="sidebar-tag-name" data-tags="运维"><span class="iconfont-archer">&#xe606;</span>运维</span>
     
         <span class="sidebar-tag-name" data-tags="yum"><span class="iconfont-archer">&#xe606;</span>yum</span>
     
