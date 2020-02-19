@@ -346,28 +346,33 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/17/docker%E4%B8%ADMysql%E7%9A%84%E5%A4%87%E4%BB%BD%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D/" >
+        <a class="abstract-title" href = "/2020/02/19/jackson%E8%87%AA%E5%AE%9A%E4%B9%89%E6%98%A0%E5%B0%84/" >
             
-                <span>docker中Mysql的备份以及恢复</span>
+                <span>Jackson自定义映射</span>
         </a>
         <div class="abstract-content">
-            使用docker ps查看mysql的容器名称
-比如MySQL的容器名称为mysql
-备份数据的脚本则为
-1#!/usr/bin/env bash23docker exec mysql mysqldump doc &gt; doc.sql #使用docker exec让容器和本地交互,然后mysqldump来备份doc数据库,到处doc.sql文件作为备份文件4sed -i '1iSET FOREIGN_KEY_CHECKS = 0;' doc.sql #为导出的doc文件添加外键检测忽略,保障导入顺利5sed -i '1iSET NAMES utf8mb4;' doc.sql6sed ...
+            Jackson在序列化反序列化LocalDateTime效果不如预期。共采用过两种方法进行修补，一种为配置序列器，一种为自定义ObjectMapper。
+设定常量
+1/**2 * 日期格式化Formatter3 */4String DATE_FORMAT = "yyyy/MM/dd";56/**7 * 时间日期格式化Formatter8 */9String DATETIME_FORMAT = "yyyy/MM/dd HH:mm:ss";1011/**12 * 时间格式化Formatter13 */14String TIME_FORMAT = "HH:mm:ss";
+
+日期使用/是为适配I...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/17</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySql">MySql</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "VCM">VCM</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Jackson">Jackson</a>
     
 </div>
             
@@ -380,37 +385,30 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/17/dockerAndDokcer-composeInstall/" >
+        <a class="abstract-title" href = "/2020/02/19/springboot%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" >
             
-                <span>docker以及docker-compose的安装</span>
+                <span>Spring Boot启动过程</span>
         </a>
         <div class="abstract-content">
-            docker安装docker的安装最好是按照官网的推荐来进行。
-docker官网
-简要记录下再CentOS下如何执行安装。
-
-清除现有docker软件
-添加docker的yum源，添加docker源的密钥
-进行安装
-清理docker的yum源(参考文章)
-使用国内阿里云镜像加速器
-
-清除现有docker软件1sudo yum remove docker \2                  docker-client \3                  docker-client-latest \4                  docker-common \5        ...
+            原生注解@PostConstructJava-SDK中自带的启动注解：当class进行初始化的时候会调用由@PostConstruct注解的函数。
+因此可以用作读取静态文件中的常量、健康检测等。但需要注意的是，这个注释是在class初始化时会进行调用，不是Spring Boot 应用启动之后进行调用。
+实现Spring boot应用启动接口Spring boot提供了ApplicationRunner作为一个可实现的接口，来完成当应用启动之后需要立即进行操作的。
+1@Repository2public class ApplicationInit implements Applicatio...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/17</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/19</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "docker-compose">docker-compose</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Boot">Spring Boot</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "运维">运维</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "VCM">VCM</a>
     
 </div>
             
